@@ -47,28 +47,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*reset.setOnClickListener(new View.OnClickListener() {
+        reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 resetGomb = new AlertDialog.Builder(MainActivity.this);
-                resetGomb.setTitle("Helyes megfejtés!");
-                resetGomb.setMessage("Szeretnél még egyet játszani?");
+                resetGomb.setTitle("Reset");
+                resetGomb.setMessage("Biztos, hogy törölni szeretné az eddigi dobásokat");
                 resetGomb.setCancelable(false);
                 resetGomb.setNegativeButton("Nem", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                    }
-                });
+                    public void onClick(DialogInterface dialogInterface, int i){}});
                 resetGomb.setPositiveButton("Igen", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
+                        eredmeny.setText("");
                     }
                 });
                 resetGomb.create().show();
             }
-        });*/
+        });
 
         dobas.setOnClickListener(new View.OnClickListener() {
             @Override
