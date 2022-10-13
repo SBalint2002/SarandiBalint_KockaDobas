@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DOBÁS"
-        android:id="@+id/dobas"/>
+        android:id="@+id/elsoOldalDobas"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

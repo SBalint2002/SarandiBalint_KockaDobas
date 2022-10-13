@@ -15,10 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
     private int szamlalo = 0;
     private ImageView elsoKocka, masodikKocka;
-    private Button egyKocka, kettoKocka, dobas, kockapoker, reset;
+    private Button egyKocka, kettoKocka, elsoOldalDobas, kockapoker, reset;
     private TextView eredmeny;
     private static boolean egykockae = false;
     private int[] kepek = {R.drawable.kocka1, R.drawable.kocka2, R.drawable.kocka3, R.drawable.kocka4, R.drawable.kocka5, R.drawable.kocka6};
@@ -30,28 +30,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         init();
-        egyKocka.setOnClickListener(this);
-        kettoKocka.setOnClickListener(this);
-        reset.setOnClickListener(this);
-        dobas.setOnClickListener(this);
-        kockapoker.setOnClickListener(this);
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View view){
-        switch (view.getId())
-        {
-            case R.id.egyKocka:
-                if (!egykockae){
-                    elsoKocka.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_out_fade_out));
-                    masodikKocka.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_out_fade_out));
-                    elsoKocka.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_in_fade_in));
-                    masodikKocka.setVisibility(View.GONE);
-                    egykockae = true;
-                }
-                break;
-            case R.id.kettoKocka:
+        egyKocka.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                elsoKocka.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_out_fade_out));
+                masodikKocka.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_out_fade_out));
+                elsoKocka.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_in_fade_in));
+                masodikKocka.setVisibility(View.GONE);
+                egykockae = true;
+            }
+        });
+        kettoKocka.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 if (egykockae){
                     elsoKocka.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_out_fade_out));
                     elsoKocka.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_in_fade_in));
@@ -59,8 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     masodikKocka.setVisibility(View.VISIBLE);
                     egykockae = false;
                 }
-                break;
-            case R.id.reset:
+            }
+        });
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 resetGomb = new AlertDialog.Builder(MainActivity.this);
                 resetGomb.setTitle("Reset");
                 resetGomb.setMessage("Biztos, hogy törölni szeretné az eddigi dobásokat");
@@ -77,7 +71,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 });
                 resetGomb.create().show();
-            case R.id.dobas:
+            }
+        });
+        elsoOldalDobas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Random r = new Random();
                 if (!egykockae) {
                     int elso = r.nextInt(6);
@@ -107,11 +105,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     eredmeny.append((elso + 1) + "\n");
                     Toast.makeText(MainActivity.this, "" + (elso + 1), Toast.LENGTH_SHORT).show();
                 }
-            case R.id.kockapoker:
+            }
+        });
+        kockapoker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent next = new Intent(MainActivity.this, Kockapoker.class);
                 startActivity(next);
                 finish();
-        }
+            }
+        });
     }
 
     private void init() {
@@ -120,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         egyKocka = findViewById(R.id.egyKocka);
         kettoKocka = findViewById(R.id.kettoKocka);
         eredmeny = findViewById(R.id.eredmeny);
-        dobas = findViewById(R.id.dobas);
+        elsoOldalDobas = findViewById(R.id.elsoOldalDobas);
         reset = findViewById(R.id.reset);
         kockapoker = findViewById(R.id.kockapoker);
     }
