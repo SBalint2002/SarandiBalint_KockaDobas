@@ -71,6 +71,7 @@ public class Kockapoker extends AppCompatActivity{
                 kocka2.setEnabled(true);
                 kocka3.setEnabled(true);
                 kocka4.setEnabled(true);
+                dobas.setEnabled(false);
                 ujradobas.setEnabled(true);
             }
         });
