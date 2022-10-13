@@ -43,9 +43,47 @@
             android:layout_weight="1"
             android:background="@null"/>
     </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dobas"
+        android:text="Dobás"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kiválasztott kockák: "
+            android:id="@+id/kivalasztott"
+            android:textSize="25sp"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ujradobas"
+        android:text="Újra dobás"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Te pontod:"
+        android:id="@+id/enyempont"
+        android:textSize="25sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Robot:"
+        android:id="@+id/robotpont"
+        android:textSize="25sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Győztes: "
+        android:id="@+id/gyoztes"
+        android:textSize="25sp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

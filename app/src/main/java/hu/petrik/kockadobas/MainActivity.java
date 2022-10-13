@@ -34,14 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         kettoKocka.setOnClickListener(this);
         reset.setOnClickListener(this);
         dobas.setOnClickListener(this);
-        kockapoker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent next = new Intent(MainActivity.this, Kockapoker.class);
-                startActivity(next);
-                finish();
-            }
-        });
+        kockapoker.setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -114,6 +107,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     eredmeny.append((elso + 1) + "\n");
                     Toast.makeText(MainActivity.this, "" + (elso + 1), Toast.LENGTH_SHORT).show();
                 }
+            case R.id.kockapoker:
+                Intent next = new Intent(MainActivity.this, Kockapoker.class);
+                startActivity(next);
+                finish();
         }
     }
 
