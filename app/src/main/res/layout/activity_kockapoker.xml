@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:src="@drawable/kocka1"
+            android:id="@+id/kocka1"
+            android:layout_weight="1"
+            android:background="@null"/>
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:src="@drawable/kocka1"
+            android:id="@+id/kocka2"
+            android:layout_weight="1"
+            android:background="@null"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:src="@drawable/kocka1"
+            android:id="@+id/kocka3"
+            android:layout_weight="1"
+            android:background="@null"/>
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:src="@drawable/kocka1"
+            android:id="@+id/kocka4"
+            android:layout_weight="1"
+            android:background="@null"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="bottom">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vissza"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/vissza"/>
+    </LinearLayout>
+</LinearLayout>

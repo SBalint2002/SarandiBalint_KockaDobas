@@ -18,39 +18,43 @@
             android:layout_height="160dp"
             android:src="@drawable/kocka1"
             android:id="@+id/elsoKocka"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@null">
         </ImageView>
         <ImageView
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:src="@drawable/kocka1"
             android:id="@+id/masodikKocka"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@null">
         </ImageView>
     </LinearLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="1 KOCKA"
-        android:textAlignment="center"
         android:id="@+id/egyKocka"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="2 KOCKA"
-        android:textAlignment="center"
         android:id="@+id/kettoKocka"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DOBÁS"
-        android:textAlignment="center"
         android:id="@+id/dobas"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Kockapoker"
+        android:id="@+id/kockapoker"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="RESET"
-        android:textAlignment="center"
         android:id="@+id/reset"/>
     <TextView
         android:layout_width="wrap_content"
