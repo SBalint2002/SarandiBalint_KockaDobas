@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
                 if (!egykockae){
                     int masodik = r.nextInt(6);
                     masodikKocka.setImageResource(kepek[masodik]);
-                }
+                    eredmeny.append((elso+1) + " + " + (masodik+1) + "\n");
+                }else eredmeny.append((elso+1) + "\n");
             }
         });
 
