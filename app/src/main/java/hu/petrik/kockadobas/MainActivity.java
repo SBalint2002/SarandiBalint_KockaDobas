@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -51,15 +52,17 @@ public class MainActivity extends AppCompatActivity {
                     int masodik = r.nextInt(6);
                     masodikKocka.setImageResource(kepek[masodik]);
                     eredmeny.append((elso+1) + " + " + (masodik+1) + "\n");
-                }else eredmeny.append((elso+1) + "\n");
+                    Toast.makeText(MainActivity.this, (elso+1) + " + " + (masodik+1), Toast.LENGTH_SHORT).show();
+                }else{
+                    eredmeny.append((elso+1) + "\n");
+                    Toast.makeText(MainActivity.this, ""+(elso+1), Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
     }
 
     private void init(){
-
-
         elsoKocka = findViewById(R.id.elsoKocka);
         masodikKocka = findViewById(R.id.masodikKocka);
         egyKocka = findViewById(R.id.egyKocka);
